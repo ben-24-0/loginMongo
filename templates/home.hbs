@@ -1,0 +1,74 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FHC Buildathon Home</title>
+        <style>
+            body {
+                background: #fff7f0;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            .main-card {
+                background: linear-gradient(135deg, #ff9800 80%, #fff3e0 100%);
+                color: #fff;
+                padding: 2rem;
+                margin: 2rem auto 1.5rem auto;
+                border-radius: 16px;
+                max-width: 500px;
+                box-shadow: 0 4px 16px rgba(255,152,0,0.2);
+                text-align: center;
+            }
+            .main-card h1 {
+                margin: 0 0 0.5rem 0;
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+            .main-card p {
+                margin: 0;
+                font-size: 1.2rem;
+            }
+            .team-cards {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            .team-card {
+                background: #fff;
+                border: 2px solid #ff9800;
+                border-radius: 12px;
+                padding: 1.2rem 1.5rem;
+                min-width: 220px;
+                box-shadow: 0 2px 8px rgba(255,152,0,0.08);
+                color: #333;
+            }
+            .team-card h2 {
+                margin: 0 0 0.5rem 0;
+                color: #ff9800;
+                font-size: 1.3rem;
+            }
+            .team-card p {
+                margin: 0.2rem 0;
+                font-size: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-card">
+            <h1>FHC Buildathon</h1>
+            <p>Welcome to the orange-themed Buildathon event!</p>
+        </div>
+        <div class="team-cards">
+            {{#each teamMembers}}
+            <div class="team-card">
+                <h2>{{name}}</h2>
+                <p><strong>Class:</strong> {{class}}</p>
+                <p><strong>Team Name:</strong> {{teamname}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </body>
+</html>
