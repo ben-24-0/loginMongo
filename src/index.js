@@ -10,7 +10,10 @@ app.set("view engine", "hbs");
 app.set("views", templatePath);
 app.use(express.urlencoded({ extended: false }));
 // Serve static assets from the public directory
+// Serve static files from public at root
 app.use(express.static(path.join(__dirname, "../public")));
+// Also serve static files under /public path for legacy references
+app.use("/public", express.static(path.join(__dirname, "../public")));
 
 app.get("/", (req, res) => {
   res.render("login");
