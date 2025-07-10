@@ -1,5 +1,5 @@
 // Load environment variables
-require('dotenv').config();
+require("dotenv").config();
 
 const express = require("express");
 const app = express();
@@ -26,27 +26,27 @@ app.get("/signup", (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
-  const data = {
-    name: req.body.name,
-    password: req.body.password,
-  };
-
-  await collection.insertMany([data]);
-  res.render("home");
+  try {
+    const data = { name: req.body.name, password: req.body.password };
+    await collection.insertMany([data]);
+    res.render("home");
+  } catch (err) {
+    console.error(err);
+    res.render("signup", { errorMessage: "Registration failed. Please try again." });
+  }
 });
 
 app.post("/login", async (req, res) => {
   try {
-    // console.log("Login attempt:", req.body);
     const check = await collection.findOne({ name: req.body.name });
-    console.log(check);
     if (check && check.password === req.body.password) {
       res.render("home");
     } else {
-      res.send("error");
+      res.render("login", { errorMessage: "Invalid username or password" });
     }
-  } catch {
-    res.send("wrong credentiels");
+  } catch (err) {
+    console.error(err);
+    res.render("login", { errorMessage: "An error occurred. Please try again." });
   }
 });
 const PORT = process.env.PORT || 3000;

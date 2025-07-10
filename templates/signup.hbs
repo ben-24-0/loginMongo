@@ -7,6 +7,9 @@
   </head>
   <body>
     <h2>Sign Up</h2>
+    {{#if errorMessage}}
+      <div class="error">{{errorMessage}}</div>
+    {{/if}}
     <form action="/signup" method="post">
       <label for="name">Username:</label>
       <input type="text" id="name" name="name" required />

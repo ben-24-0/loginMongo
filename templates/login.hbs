@@ -7,6 +7,9 @@
   </head>
   <body>
     <h2>login</h2>
+    {{#if errorMessage}}
+      <div class="error">{{errorMessage}}</div>
+    {{/if}}
     <form action="/login" method="post">
       <label for="name">Username:</label>
       <input type="text" id="name" name="name" required />
