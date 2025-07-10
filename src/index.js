@@ -9,6 +9,8 @@ app.use(express.json());
 app.set("view engine", "hbs");
 app.set("views", templatePath);
 app.use(express.urlencoded({ extended: false }));
+// Serve static assets from the public directory
+app.use(express.static(path.join(__dirname, "../public")));
 
 app.get("/", (req, res) => {
   res.render("login");

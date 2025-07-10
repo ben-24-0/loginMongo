@@ -1,0 +1,112 @@
+/* Home Page Styles */
+body {
+  background: #fff7f0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.main-card {
+  background: linear-gradient(135deg, #ff9800 80%, #fff3e0 100%);
+  color: #fff;
+  padding: 2rem;
+  margin: 2rem auto 1.5rem auto;
+  border-radius: 16px;
+  max-width: 500px;
+  box-shadow: 0 4px 16px rgba(255, 152, 0, 0.2);
+  text-align: center;
+}
+
+.main-card h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+.main-card p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.team-card {
+  background: #fff;
+  border: 2px solid #ff9800;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  min-width: 220px;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.08);
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.2);
+}
+
+.team-card h2 {
+  margin: 0 0 0.5rem 0;
+  color: #ff9800;
+  font-size: 1.3rem;
+}
+
+.team-card p {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+}
+
+/* Navigation bar */
+.navbar {
+  background-color: #ff9800;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  margin: 0;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #fff3e0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-card {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .team-cards {
+    padding: 0 1rem;
+  }
+
+  .team-card {
+    width: 100%;
+  }
+}
